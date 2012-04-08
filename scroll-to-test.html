@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+	#top,
+	#mid,
+	#bottom{
+		height:800px;
+	}
+
+</style>
+
+</head>
+<body>
+<div id="top" style="background-color:red">red</div>
+<div id="mid" style="background-color:green">green</div>
+<div id="bottom" style="background-color:blue">blue</div>
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript">
+	$(window).ready(function(){
+		$('#top').click(function(){
+			$(window).scrollTo("#bottom",10000);
+		})
+	});	
+
+
+</script>
+
+</body>
+</html>

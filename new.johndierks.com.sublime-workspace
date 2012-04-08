@@ -1,0 +1,240 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chart",
+				"chart-section"
+			],
+			[
+				"item",
+				"itemIndex"
+			],
+			[
+				"updat",
+				"updateWorkArray"
+			],
+			[
+				"top",
+				"topOffset"
+			],
+			[
+				"first-",
+				"first-of-type"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"dis",
+				"display	display: inline"
+			],
+			[
+				"last-",
+				"last-of-type"
+			],
+			[
+				"bakv",
+				"background-color"
+			],
+			[
+				"re",
+				"resize"
+			],
+			[
+				"sc",
+				"scrollTo-1"
+			],
+			[
+				"point",
+				"point4"
+			],
+			[
+				"la",
+				"last-of-type"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"z",
+				"Set Syntax: Graphviz (DOT)"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"def",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pak",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/john/Sites/new2.johndierks.com/css/styles.css",
+		"/Users/john/Sites/new2.johndierks.com/js/main.js",
+		"/Users/john/Sites/new2.johndierks.com/index.html",
+		"/Users/john/Desktop/trash.html",
+		"/Users/john/Desktop/test.html",
+		"/Users/john/Sites/new2.johndierks.com/scroll-to-test.html",
+		"/Users/john/Sites/new2.johndierks.com/js/jquery-1.7.1.min.js",
+		"/Users/john/Dropbox/The Mustache Game/css/bookmarklet.css",
+		"/Users/john/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/john/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/john/Library/Application Support/Sublime Text 2/Packages/BracketHighlighter/Default (OSX).sublime-keymap",
+		"/Users/john/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/john/Library/Application Support/Sublime Text 2/Packages/BracketHighlighter/BracketHighlighter.sublime-settings",
+		"/Users/john/Library/Application Support/Sublime Text 2/Packages/User/BracketHighlighter.sublime-settings",
+		"/Users/john/Library/Application Support/Sublime Text 2/Packages/User/JavaScript.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"currentArray",
+			"updateworkarr",
+			"arti",
+			"work-title",
+			"span",
+			"$(win",
+			"\\n",
+			" ",
+			"#chart",
+			"setin",
+			"chart",
+			"about",
+			"About",
+			"about",
+			"tainer",
+			"gi"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true
+}

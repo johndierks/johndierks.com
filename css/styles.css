@@ -1,0 +1,463 @@
+@font-face {
+    font-family: 'MuseoSlab1000';
+    src: url('Museo500-Regular-webfont.eot');
+    src: url('Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Museo500-Regular-webfont.woff') format('woff'),
+         url('Museo500-Regular-webfont.ttf') format('truetype'),
+         url('Museo500-Regular-webfont.svg#Museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #ddd;
+  font-family: 'Nunito',sans-serif;
+  font-weight: 500;
+  font-size: 20px; 
+}
+
+a{
+  color: white;
+}
+
+#sidebar{
+  background: #000 url('http://subtlepatterns.com/patterns/fake_brick.png') repeat left top;
+  color: #fff;
+  padding: 0px 20px 20px 20px;
+  position: fixed;
+  text-align: center;
+  height: 100%;
+  max-width: 158px;
+  z-index: 10000;
+  -moz-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.7);
+
+}
+
+#sidebar hgroup{
+  margin-top: 20px;
+}
+
+
+#sidebar h2{
+  display: block;
+  font-family: 'Nunito', sans-serif;;
+
+  margin: 0;
+  padding: 0 0 10px 0;
+  
+  font-weight: 400;
+  text-align: center;
+}
+
+#sidebar h2 b{
+  display: block;
+  width: 150px;
+  margin: 0;
+  background: #262626;
+  border-radius: 10px;
+  padding: 12px 8px 8px 8px;
+  box-shadow: inset 0 1px 1px #000,  0 1px 0px #333;
+  font: 700 45px/50px 'Nunito', sans-serif;
+}
+
+#sidebar h2 b:before{
+  background: #2098d0;
+  height: 100%;
+  width: 10px;
+}
+
+#sidebar h2 span{
+  font-size: 16px;
+  display: block;
+  font-family: 'Nunito', sans-serif;;
+  font-weight: normal;
+  text-align: center;
+  font-weight: 300;
+}
+
+#sidebar span#strategy-label{
+  color: #2098d0;
+}
+
+#sidebar span#ux-label{
+  color: #f3b01a;
+}
+
+#sidebar span#developer-label{
+  color: #d12b75;
+}
+
+#sidebar span#other-label{
+  color: #51b247;
+}
+
+#sidebar p{
+  font-size: 11px;
+  position: absolute;
+  color: #666;
+  bottom: 25px;
+  left: 25px;
+ max-width: 148px;
+}
+
+nav{
+  margin: 40px auto;
+  text-align: left;
+}
+
+nav a{
+  display: inline-block;
+  color: white;
+  margin-bottom: 5px;
+  text-align: left;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+
+nav a:after{
+  content: ' \00BB';
+}
+
+#main-content-container{
+  color: #222;
+  padding-left: 0px; 
+  color:  #fff;
+}
+
+#main-content-container section{
+  padding: 50px;
+  padding-left: 40px;
+  margin-left: 195px;
+  width: auto;
+/*  background: #d9d9d9;*/
+}
+
+/*#main-content-container article:nth-of-type(2n){
+  background: #c9c9c9;
+}*/
+
+
+#main-content-container section .wrapper{
+  position: relative;
+}
+
+
+#chart-explanation{
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  color: #333;
+  font-size: 31px;
+}
+
+#chart-explanation p{
+  margin: 0 0 20px 0;
+}
+
+#chart-explanation p:last-of-type{
+  margin: 0 0 0 0;
+}
+
+#close-btn{
+  position: absolute;
+  text-decoration: none;
+  top: 5px;
+  right: 10px;
+  color: #333;
+}
+
+#close-btn:hover:before{
+  content: "close ";
+  font-size: 12px;
+  position: relative;
+  right: -25;
+  bottom: 2px;;
+}
+
+.wrapper p,
+.wrapper ol{
+   max-width: 1000px;
+   margin: 30px 0 10px 0;
+}
+
+.wrapper ol{
+  margin: 30px 0 10px 40px;;
+  max-width: 500px;
+}
+
+.wrapper p:first-of-type{
+  font-size: 36px;
+  font-family: 'Nunito',sans-serif;
+  font-weight: 700;
+  margin: 40px 0 10px 0;
+  line-height: 32px;
+}
+
+.wrapper p.cta{
+  font-size: 28px;
+}
+
+h1,
+#main-content-container section h3{
+font-family: "museo-slab", Helvetica, sans-serif;
+font-weight: 900;
+letter-spacing: -41px;
+font-size: 255px;
+line-height: 185px;
+text-transform: uppercase;
+padding: 0;
+margin: 0;
+color: #fff;
+}
+
+#main-content-container section h3:last-of-type{
+  margin-bottom:30px
+}
+
+#main-content-container section h3 + hgroup{
+  margin-top:-30px
+}
+
+#main-content-container h3 strong{
+  color: #d94722;
+  font-weight: 400;
+}
+
+.hero{
+  border: 5px solid #333;
+  border-radius: 5px;
+
+}
+
+.headline{
+  position: relative;
+  z-index: 100;
+}
+
+#body1{
+  position: relative;
+ 
+}
+
+#body1 p{
+  z-index: 10002;
+}
+
+#headline1{
+  position: relative;
+  left: 75px;
+}
+
+#headline3{
+  position: relative;
+  left: 80px;
+}
+
+#chart{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 97%;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.summary-wrapper{
+  max-width: 840px;;
+  padding: 40px;
+  background: rgba(255,255,255,.9);
+  margin: 40px 0;
+}  
+
+.summary-wrapper p:first-child,
+.summary-wrapper ol:first-child,
+.summary-wrapper ul:first-child{
+  margin-top: 0;
+}
+
+.summary-wrapper p:last-child,
+.summary-wrapper ol:last-child,
+.summary-wrapper ul:last-child{
+  margin-bottom: 0;
+}
+
+.summary-wrapper p:first-of-type{
+  font-family: "museo-slab";
+  font-weight: 500;
+  
+}
+
+#chart-wrapper{
+  position: absolute;
+  display: inline-block;
+  z-index: 100;
+}
+
+.thumbnail-group{
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.thumbnail-group:last-of-type{
+  margin-right: 0px
+}
+
+.work-img-tile{
+  width: 180px;
+  height: 180px;
+  margin: 0px 20px 0 0;
+  border: 10px solid #fff;
+  /*border-radius: 200px;*/
+}
+
+.work-img-tile:last-of-type{
+  margin-right: 0;
+}
+
+
+#main-content-container section h3.parsed-title{
+  display: inline-block;
+}
+
+#main-content-container section h3.parsed-title + h3{
+  margin-top: -3px;
+}
+
+
+#main-content-container section #mustache-title-part-1{
+  margin-right: -10px;
+}
+
+.work-tags{
+  display: inline;
+  padding: 0;
+}
+
+.work-tags li{
+  list-style: none;
+  display: inline;
+  position: relative;
+}
+
+.work-tags li:after{
+  content: ","
+}
+
+.work-tags li:last-of-type:after{
+  content: none;
+}
+
+.strategy-tag:hover{
+  border-bottom: 8px solid #2098d0;
+}
+
+.ux-tag:hover{
+  border-bottom: 8px solid #f3b01a;
+}
+
+.development-tag:hover{
+  border-bottom: 8px solid #d12b75;
+}
+
+.other-tag:hover{
+  border-bottom: 8px solid #51b247;
+}
+
+
+
+h4.work-tag-title{
+  display: inline;
+  font-weight: normal;
+}
+
+section#chart-section{
+  background:#51b247; 
+}
+
+section#about-section{
+  background:#51b247;
+}
+
+section.work-item{
+  background:  #888;
+}
+
+section.work-item:nth-of-type(2n){
+  background:  #666;
+}
+
+
+footer{
+  background-color: #333;
+  color: #ddd;
+  text-align: right;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  position: relative;
+}
+
+footer p{
+  margin: 0 5px 0 0;
+}
+
+#cc-license{
+  position: relative;
+  top:4px;
+  display: inline-block;
+}
+
+#cc-license img{
+  border-width: 0;
+}
+
+@media only screen and (max-width: 1545px) {
+  #main-content-container section .work-title{
+    font-size: 190px;
+    line-height: 138px;
+    letter-spacing: -30px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #main-content-container section .work-title{
+    font-size: 200px;
+    line-height: 146px;
+    letter-spacing: -30px;
+  }
+}
+
+@media only screen and (max-width: 1245px) {
+  #main-content-container section .work-title{
+    font-size: 160px;
+    line-height: 118px;
+    letter-spacing: -25px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #main-content-container section .work-title{
+    font-size: 160px;
+    line-height: 118px;
+    letter-spacing: -25px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  #main-content-container section .work-title{
+    font-size: 128px;
+    line-height: 94px;
+    letter-spacing: -20px;
+  }
+}
