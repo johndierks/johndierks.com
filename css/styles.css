@@ -14,7 +14,7 @@
 body{
   margin: 0;
   padding: 0;
-  background: #ddd;
+  background: #666;
   font-family: 'Nunito',sans-serif;
   font-weight: 500;
   font-size: 20px; 
@@ -25,7 +25,7 @@ a{
 }
 
 #sidebar{
-  background: #000 url('http://subtlepatterns.com/patterns/fake_brick.png') repeat left top;
+  background: #000 url('../img/fake_brick.png') repeat left top;
   color: #fff;
   padding: 0px 20px 20px 20px;
   position: fixed;
@@ -62,23 +62,19 @@ a{
   background: #262626;
   border-radius: 10px;
   padding: 12px 8px 8px 8px;
-  box-shadow: inset 0 1px 1px #000,  0 1px 0px #333;
   font: 700 45px/50px 'Nunito', sans-serif;
 }
 
-#sidebar h2 b:before{
-  background: #2098d0;
-  height: 100%;
-  width: 10px;
-}
+
 
 #sidebar h2 span{
-  font-size: 16px;
+  font-size: 17px;
   display: block;
   font-family: 'Nunito', sans-serif;;
   font-weight: normal;
   text-align: center;
-  font-weight: 300;
+  font-weight: 500;
+
 }
 
 #sidebar span#strategy-label{
@@ -96,6 +92,23 @@ a{
 #sidebar span#other-label{
   color: #51b247;
 }
+
+#strategy-percentage{
+    box-shadow: inset 0 1px 1px #000, inset 10px 0px 0 #2098d0, 0 1px 0px #333; /*//*/
+}
+
+#ux-percentage{
+    box-shadow: inset 0 1px 1px #000, inset 10px 0px 0 #f3b01a, 0 1px 0px #333; /*//*/
+}
+
+#developer-percentage{
+    box-shadow: inset 0 1px 1px #000, inset 10px 0px 0 #d12b75, 0 1px 0px #333; /*//*/
+}
+
+#other-percentage{
+    box-shadow: inset 0 1px 1px #000, inset 10px 0px 0 #51b247, 0 1px 0px #333; /*//*/
+}
+
 
 #sidebar p{
   font-size: 11px;

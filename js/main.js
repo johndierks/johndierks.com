@@ -1,10 +1,10 @@
 $(document).ready(function(){
-  var work = [{'name':'chart-section','developer':40,'ux':28,'strategy':22,'other':10},
-		              {'name':'about-section','developer':40,'ux':28,'strategy':22,'other':10},
+  var work = [    {'name':'about-section','developer':40,'ux':28,'strategy':22,'other':10},
 		              {'name':'flash-rebrand','developer':0,'ux':10,'strategy':90,'other':0},
 		              {'name':'tmg','developer':60,'ux':15,'strategy':25,'other':0},
                   {'name':'bus-box','developer':50,'ux':30,'strategy':0,'other':20},
-                  {'name':'infographic','developer':10,'ux':0,'strategy':0,'other':90}];
+                  {'name':'shrek','developer':60,'ux':30,'strategy':0,'other':10},
+                  {'name':'infographic','developer':10,'ux':10,'strategy':0,'other':90}];
 	var currentSidebarInfoId = '';
 	var previousArray = [0,0,0,0];
   var duration = 2.5; //time in seconds
@@ -40,9 +40,9 @@ $(document).ready(function(){
 
     //updateWorkArray(0); //initializes and the animation on index 0;
     sizeSections();
-    checkScrollPosition();
+    setTimeout(checkScrollPosition,2500);
     findHeaderLocations();
-    updateWorkArray('chart-section')
+    updateWorkArray('about-section')
     
     $window.scroll(function(){
       scrollThrolling();
@@ -163,7 +163,6 @@ $(document).ready(function(){
       checkScrollPosition();
       console.log("checking scroll");
     }
-
   }
 
   var checkScrollPosition = function () { 
