@@ -1,10 +1,11 @@
 $(document).ready(function(){
-  var work = [    {'name':'about-section','developer':40,'ux':28,'strategy':22,'other':10},
+  var work = [{'name':'chart-section','developer':40,'ux':28,'strategy':22,'other':10},
+                  {'name':'about-section','developer':40,'ux':28,'strategy':22,'other':10},
 		              {'name':'flash-rebrand','developer':0,'ux':10,'strategy':90,'other':0},
 		              {'name':'tmg','developer':60,'ux':15,'strategy':25,'other':0},
                   {'name':'bus-box','developer':50,'ux':30,'strategy':0,'other':20},
                   {'name':'shrek','developer':60,'ux':30,'strategy':0,'other':10},
-                  {'name':'infographic','developer':10,'ux':10,'strategy':0,'other':90}];
+                  {'name':'infographic','developer':10,'ux':0,'strategy':0,'other':90}];
 	var currentSidebarInfoId = '';
 	var previousArray = [0,0,0,0];
   var duration = 2.5; //time in seconds
@@ -135,14 +136,12 @@ $(document).ready(function(){
 		
 			percentage[i] = Math.round(easeIn(timeCounter,previousArray[i],percentageArray[i]-previousArray[i],numberOfSteps)).toString();
 			
-			if(percentage < 10){
-				percentage[i] = '0' + percentage[i];
-			}
-			
-			percentage[i] = percentage[i] + '%';
+			if(percentage[i] < 10) percentage[i] = '0' + percentage[i].toString();
+
+			percentage[i] = percentage[i].toString() + '%';
 		}
 				
-		$( "#strategy-percentage" ).html( percentage[0]);
+		$( "#strategy-percentage" ).html(percentage[0]);
 		$( "#ux-percentage" ).html( percentage[1]);
 		$( "#developer-percentage" ).html( percentage[2]);
 		$( "#other-percentage" ).html( percentage[3]);
