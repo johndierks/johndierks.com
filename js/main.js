@@ -2,33 +2,35 @@ $(document).ready(function(){
   var work = [{'name':'chart-section','developer':40,'ux':28,'strategy':22,'other':10},
                   {'name':'about-section','developer':40,'ux':28,'strategy':22,'other':10},
 		              {'name':'flash-rebrand','developer':0,'ux':10,'strategy':90,'other':0},
-		              {'name':'tmg','developer':60,'ux':15,'strategy':25,'other':0},
+		              {'name':'tmg','developer':50,'ux':25,'strategy':15,'other':10},
                   {'name':'bus-box','developer':50,'ux':30,'strategy':0,'other':20},
                   {'name':'shrek','developer':60,'ux':30,'strategy':0,'other':10},
                   {'name':'infographic','developer':10,'ux':0,'strategy':0,'other':90}];
-	var currentSidebarInfoId = '';
-	var previousArray = [0,0,0,0];
+	
+	var $window = $(window);
+  
+  var currentSidebarInfoId = '';
+  var mouseMovingTimeout, chart, chartUpdateInterval, wh, ww;
+
+  var isChartIntervalRunning = false;
+  var updateTime = 3500;
+  
+  var workItemOffsetArray = [];
+  var lastScrollUpdate, sidebarUpdateInterval = 0;
+  var $articleTitles = $('.wrapper h3'); 
+  var percentageArray = previousArray = [0,0,0,0];
+
+  //Control chart updating with these vars
   var duration = 2.5; //time in seconds
   var timeCounter = 1;
   var fps = 30;
   var numberOfSteps = fps * duration;
   var msPerStep = Math.round ( (1 / fps) * 1000 );
-  var percentageArray = previousArray;
-  var lastScrollUpdate = 0;
-  var sidebarInterval = 0;
-  var $articleTitles = $('.wrapper h3');  
-  var wh;
-  var ww;
-  var chart;
-  var chartInterval;
-  var isChartIntervalRunning = false;
-  var updateTime = 3500;
-  var $window = $(window);
-  var workItemOffsetArray = [];
-  
-  var init = function(){
-    $('#typekit-badge-vmn5pgu').remove();
 
+  var init = function(){
+    $('.typekit-badge').remove();
+
+    // setup 
     $('#nav-about').click(function(e){
       $window.scrollTo( '#about-section', 800 );
     });
@@ -37,29 +39,49 @@ $(document).ready(function(){
       $window.scrollTo( '.work-item:first', 800 );
     });
 
-    
-
-    //updateWorkArray(0); //initializes and the animation on index 0;
     sizeSections();
-    setTimeout(checkScrollPosition,2500);
-    findHeaderLocations();
-    updateWorkArray('about-section')
+    findHeaderLocations(); 
+    updateSidebarPercentages('about-section'); //initialize sidebar percentages with about me data.
+    checkScrollPosition(); //override previous line if in a different section
     
-    $window.scroll(function(){
-      scrollThrolling();
-    });
+    $window.scroll(scrollThrolling);
 
     $window.resize(function(){
       sizeSections();
       checkScrollPosition();
       findHeaderLocations();
     });
-    
+    $downarrow = $('#down-arrow');
+    $(window).bind('mousemove', mouseMoved);
+  }
+
+  var mouseMoved = function(){
+    $(window).unbind('mousemove');
+
+    var pos = $window.scrollTop();
+      
+    if(pos< 1.2 * wh){
+      $downarrow.fadeIn(400,function(){ //fade in over 400ms
+        $downarrow.animate({"bottom":"10px"},200,function(){ 
+          $downarrow.animate({"bottom":"25px"},200,function(){ 
+            $downarrow.animate({"bottom":"10px"},200);
+            mouseMovingTimeout = setTimeout(resetArrowAnimation, 500);
+          });
+        });
+      });
+    }    
+  }
+
+  var resetArrowAnimation = function(){
+    $downarrow.fadeOut(700,function(){
+      $downarrow.css({"bottom":"40px"})
+      $(window).bind('mousemove',mouseMoved); //restart mousemove event listener
+    });
     
   }
 
 	/*---------------------
-		Animating numbers
+		Easing function for Animating numbers the sidebar numbers
 	---------------------*/    			
 	var easeIn = function(t, b, c, d){
 		var ts = (t/=d)*t;
@@ -68,7 +90,7 @@ $(document).ready(function(){
 	}
 	
   /*---------------------
-    Resizing Content sections to fit page height
+    Resizing Content sections to fit page height. Fired when browser is resized.
   ---------------------*/   
   var sizeSections = function (){
     wh = $window.height();
@@ -82,6 +104,10 @@ $(document).ready(function(){
     }
   }
 
+  /*---------------------
+    Find and store the vertical location of each item that had sidebar data. 
+    Used for knowing when to updated sidebar percentages based on scroll height
+  ---------------------*/  
   var findHeaderLocations = function(){
     
     $('.sidebar-data').each(function(){
@@ -94,8 +120,14 @@ $(document).ready(function(){
     
   }
 
-	var updateWorkArray = function(idString){
+  /*---------------------
+    Pass this function an idstring for the section that 
+    
+  ---------------------*/  
+	var updateSidebarPercentages = function(idString){
 	  
+    console.log('updateSidebarPercentages');
+
     var item;
     var itemIndex = -1;
     var itemWasFound = false;
@@ -104,53 +136,52 @@ $(document).ready(function(){
       if(work[item].name == idString){
         itemWasFound = true;
         itemIndex = item;
+        break;
       }
     }
 
-    if(itemWasFound && itemIndex != -1 && idString != currentSidebarInfoId){
+    if(itemWasFound && idString != currentSidebarInfoId){
+
+      console.log('new current section is: ',idString);
 
       currentSidebarInfoId = idString;
-
-  	  window.clearInterval(sidebarInterval);
-  	  console.log('updateWorkArray');
+  	  window.clearInterval(sidebarUpdateInterval);
   	  previousArray = percentageArray;
   	 
-  	  console.log('current section: ',idString);
-
       percentageArray = [work[itemIndex].strategy, work[itemIndex].ux, work[itemIndex].developer, work[itemIndex].other];
-      	  
+
   	  timeCounter = 0;
-  	  sidebarInterval = setInterval(function(){ updatePercentages(); },msPerStep);
+  	  sidebarUpdateInterval = setInterval(function(){ incrementSidebarPercentages(); },msPerStep);
 
     }else if (idString == currentSidebarInfoId){
-      //do nothing
+      //do nothing, already displaying current data
     }else{
       console.log('item',idString,'was not found');
     }
 	}
 	
-	var updatePercentages = function(){
+	var incrementSidebarPercentages = function(){
 		var percentage = [];
 		  		
 		for(var i=0; i<percentageArray.length; i++){
 		
 			percentage[i] = Math.round(easeIn(timeCounter,previousArray[i],percentageArray[i]-previousArray[i],numberOfSteps)).toString();
 			
-			if(percentage[i] < 10) percentage[i] = '0' + percentage[i].toString();
+      if(percentage[i] < 10) percentage[i] = '0' + percentage[i].toString();
 
 			percentage[i] = percentage[i].toString() + '%';
 		}
-				
-		$( "#strategy-percentage" ).html(percentage[0]);
-		$( "#ux-percentage" ).html( percentage[1]);
-		$( "#developer-percentage" ).html( percentage[2]);
+		
+    $( "#strategy-percentage" ).html(percentage[0]);
+    $( "#ux-percentage" ).html( percentage[1]);
+    $( "#developer-percentage" ).html( percentage[2]);		
 		$( "#other-percentage" ).html( percentage[3]);
 				
 		timeCounter = timeCounter + 1;
 		
 		if(timeCounter > numberOfSteps){
-		  console.log('Sidebar updater: clearing sidebarInterval');
-			window.clearInterval(sidebarInterval);
+		  console.log('Sidebar updater: clearing sidebarUpdateInterval');
+			window.clearInterval(sidebarUpdateInterval);
 		}
 	}
 	
@@ -160,7 +191,6 @@ $(document).ready(function(){
     if(Math.abs(lastScrollUpdate - pos) > (.3 * wh)){
       lastScrollUpdate = pos;
       checkScrollPosition();
-      console.log("checking scroll");
     }
   }
 
@@ -170,25 +200,28 @@ $(document).ready(function(){
 
     //check to see if the chart is in view. if not, turn off
     if (pos < wh && !isChartIntervalRunning){
-      chartInterval = window.setInterval(function(){addPoint();}, updateTime);
-      addPoint();
+      chartUpdateInterval = window.setInterval(function(){addPointToChart();}, updateTime);
+      addPointToChart();
       isChartIntervalRunning = true;
     }else if (pos > wh && isChartIntervalRunning){
-      clearInterval(chartInterval);
+      clearInterval(chartUpdateInterval);
       isChartIntervalRunning = false;
     }
 
+
+    // Check each item in the workItemOffset array.
+    // If that item's topOffeset is between 40% above the window height above the top of the window and
+    // 50% down of the window height, change the sidebar percentages to that item's id.
     var s;
     for(s in workItemOffsetArray){
       if(workItemOffsetArray[s].topOffset > pos - (0.4 * wh) && workItemOffsetArray[s].topOffset < pos + (0.5 * wh)){
-        updateWorkArray(workItemOffsetArray[s].id);
+        updateSidebarPercentages(workItemOffsetArray[s].id);
       } 
     }
 
-
   };  
   
-  var addPoint = function() {
+  var addPointToChart = function() {
     $('#highcharts-0').css({'overflow':'visible'})
     console.log('adding point');
   
@@ -203,8 +236,6 @@ $(document).ready(function(){
       point4 = 0;
     }
 
-
-
     var series = chart.series
     
     // add the points
@@ -215,8 +246,6 @@ $(document).ready(function(){
     chart.series[3].addPoint(point4, false, true, false);
     chart.redraw()
   }        
-    
-  
     
   Highcharts.setOptions({
     colors: ['#2098d0','#f39f1a','#d12b75','#51b247', '#f15a24'] //
@@ -238,7 +267,7 @@ $(document).ready(function(){
             backgroundColor: '#51b247',
             animation: {
                         duration: 2000,   // As close to interval as possible.
-                        easing: 'swing'  // Important: this makes it smooth
+                        easing: 'swing'   // Important: this makes it smooth
                     }
         },  
         credits: {
@@ -298,7 +327,6 @@ $(document).ready(function(){
                     enabled:false,
                     radius:10,
                     lineWidth: 4,
-                    
                     lineColor: '#ffffff'
                 }
             }
@@ -318,7 +346,6 @@ $(document).ready(function(){
         }]
     });
   
-
 init(); //start
   
 }); // document ready function

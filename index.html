@@ -8,7 +8,7 @@
     <!--
     * 
     *
-    *  Thanks for checking out the source. You rock. Here's the easter egg!
+    *  Thanks for checking out the source. You rock. Here's an easter egg!
     *
     *           ,aaadddd8888888bbbbaaa,_
     *       ,adP"::' 888  "Y8ba,  ```::Y8aa,_
@@ -40,31 +40,33 @@
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
 
-    <!-- Start of Facebook Meta Tags by shailan (http://shailan.com) -->
-     <meta property="fb:app_id"               content="127807640683391"> 
-     <meta property="og:type"                 content="website"> 
-     <meta property="og:url"                  content="http://www.johndierks.com/new"> 
-     <meta property="og:image"                content="img/etc/facebook100x100.png">
-     <meta property="og:title"                content="100% John Dierks">
-     <meta property="og:description"          content="John Dierks is an interactive strategist, user experience designer, and front & backend developer"> 
-<!-- End of Facebook Meta Tags -->
+    <!-- Start of Facebook Meta Tags -->
+      <meta property="fb:app_id"               content="127807640683391"> 
+      <meta property="og:type"                 content="website"> 
+      <meta property="og:url"                  content="http://www.johndierks.com/new/"> 
+      <meta property="og:image"                content="http://www.johndierks.com/new/img/etc/facebook-tile.gif">
+      <meta property="og:title"                content="100% John Dierks">
+      <meta property="og:description"          content="John Dierks is an developer, strategist, and user experience designer. He wants to make cool stuff with you."> 
+    <!-- End of Facebook Meta Tags -->
 
     <script type="text/javascript" src="http://use.typekit.com/vmn5pgu.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
+
   <body>
     <section id="sidebar">
       <hgroup>
-        <h2><b id="strategy-percentage">00%</b> <span id="strategy-label">strategist</span></h2>
-        <h2><b id="ux-percentage">00%</b> <span id="ux-label">user experience</span></h2>
         <h2><b id="developer-percentage">00%</b> <span id="developer-label">developer</span></h2>
+        <h2><b id="ux-percentage">00%</b> <span id="ux-label">user experience</span></h2>
+        <h2><b id="strategy-percentage">00%</b> <span id="strategy-label">strategist</span></h2>
         <h2><b id="other-percentage">00%</b> <span id="other-label">other</span></h2>
       </hgroup>
       
-      <nav>
+      <!-- I'm still deciding whether this nav is a good idea or not. Thoughts? Email me. -->
+      <!-- <nav>
         <a id="nav-about" href="#about">About me</a>
         <a id="nav-work" href="#work">Work</a>
-      </nav>
+      </nav> -->
     </section>
     
     <section id="main-content-container">
@@ -74,10 +76,9 @@
           <h3 class="work-title">100%</h3>
           <h3 class="work-title">John</h3>
           <h3 class="work-title">Dierks</h3>
-                   
-          <p id="chart-explanation">I log how I spent my time each day on professional and personal projects to better understand who I am and I what I do.</p>
+          
         </div>
-
+        <img id="down-arrow" src="img/downarrow.png">
         <div id="chart"></div>
       </section>
       
@@ -85,10 +86,11 @@
         <div class="wrapper">
           <h3 class="work-title">About</h3>
           <h3 class="work-title">me</h3>
-          <p>I make things as an interactive strategist, user experience designer, and front &amp; backend developer.</p>
-          <p>I am currently a graduate student in the 60 Weeks program at <a href="http://bdw.colorado.edu/blog">Boulder Digital Works</a> at the <a href="http://www.colorado.edu">University of Colorado</a>. Find me on: <a href="http://www.twitter.com/jdierks">Twitter</a>, <a href="http://www.linkedin.com/in/johndierks">LinkedIn</a>, <a href="http://www.facebook.com/johndierks">Facebook</a>.
+          <p>I make things as a developer, user experience designer, and interactive strategist.</p>
+          <p>I log how I spend my time each day on professional and personal projects to better understand what I do.</p>
+          <p>I am currently a graduate student in the 60 Weeks program at <a href="http://bdw.colorado.edu/blog">Boulder Digital Works</a> at the <a href="http://www.colorado.edu">University of Colorado</a>. Find me on: <a href="http://www.twitter.com/jdierks">Twitter</a>, <a href="http://www.linkedin.com/in/johndierks">LinkedIn</a>, <a href="http://www.github.com/johndierks">Github</a>, <a href="http://www.facebook.com/johndierks">Facebook</a>.
           </p>
-          <p class="cta">Want to make cool stuff together? <a href="mailto:johndierks@gmail.com">Contact me</a>. &raquo;</p>
+          <p class="cta">Want to make cool stuff together? <a href="mailto:john@johndierks.com">Contact me</a>. &raquo;</p>
         </div>
       </section>
       
@@ -125,9 +127,8 @@
           <p>The Mustache Game is a celebration of diversion, exhilaration and embellishment. The concept is simple:</p>
            <ol>
              <li>Gather group of friends</li>
-             <li>Choose a light-hearted film and cue it up</li>
              <li>Craft paper mustaches and place them on screen</li>
-             <li>Start the film</li>
+             <li>Choose a light-hearted film and cue it up</li>
              <li>When your mustache strikes the upper lips of anyone on-screen, suffer/enjoy the consequences: a sip of lager or other preferred drink</li>
            </ol>         
         
@@ -135,9 +136,12 @@
 
           <h4 class="work-tag-title">Tags:</h4>
           <ul class="work-tags">
+            <li class="strategy-tag">concept strategy</li>
+            <li class="ux-tag">wireframing</li>
+            <li class="ux-tag">motion comps</li>
             <li class="development-tag">HTML5/CSS3/JS</li>
-            <li class="strategy-tag">strategy</li>
             <li class="development-tag">systems</li>
+            <li class="other-tag">sticker making</li>
           </ul>
         </div>
       </section>
@@ -192,13 +196,15 @@
           <h4 class="work-tag-title">Tags:</h4>
           <ul class="work-tags">
             <li class="other-tag">design</li>
+            <li class="development-tag">regular expressions</li>
             <li class="other-tag">Adobe Illustrator</li>
           </ul>
         </div>
       </section>  
 
 
-      <footer><p><a id="cc-license" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a> <a href="http://www.johndierks.com" >John Dierks</a> &bull; version b0.8</p></footer>
+      <footer><p><a href="http://www.johndierks.com" >John Dierks</a> &bull; <a href="http://www.github.com/johndierks">version b0.8</a></p><a href="https://twitter.com/jdierks" class="twitter-follow-button" data-show-count="false">Follow @jdierks</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div class="fb-like" data-href="http://www.johndierks.com/new" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false" data-font="verdana"></div></footer>
     </section> <!--#main-content-container-->
     
     <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -206,6 +212,14 @@
     <script src="js/jquery.scrollTo-1.4.2-min.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/highcharts.js" type="text/javascript"></script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=127807640683391";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     
   </body>
 </html>

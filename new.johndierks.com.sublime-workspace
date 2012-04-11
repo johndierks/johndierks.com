@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"to",
+				"toString"
+			],
+			[
+				"before",
+				"background-attachment"
+			],
+			[
+				"scrol",
+				"scrollingCounter"
+			],
+			[
+				"str",
+				"strategy-tag"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"scroll",
+				"scrollTimeout"
+			],
+			[
 				"chart",
 				"chart-section"
 			],
@@ -108,9 +132,9 @@
 	},
 	"file_history":
 	[
-		"/Users/john/Sites/new2.johndierks.com/css/styles.css",
-		"/Users/john/Sites/new2.johndierks.com/js/main.js",
 		"/Users/john/Sites/new2.johndierks.com/index.html",
+		"/Users/john/Sites/new2.johndierks.com/js/main.js",
+		"/Users/john/Sites/new2.johndierks.com/css/styles.css",
 		"/Users/john/Desktop/trash.html",
 		"/Users/john/Desktop/test.html",
 		"/Users/john/Sites/new2.johndierks.com/scroll-to-test.html",
@@ -140,6 +164,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hover",
+			"addpoin",
+			"absolute",
+			"border",
+			"ux-percentage",
+			"title-g",
+			"parsed",
 			"currentArray",
 			"updateworkarr",
 			"arti",
