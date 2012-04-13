@@ -204,27 +204,36 @@ nav a:after{
   bottom: 2px;;
 }
 
-.wrapper p,
-.wrapper ol{
+.wrapper p{
    max-width: 1000px;
-   margin: 15px 0 0 0;
+   margin: 20px 0 10px 0;
 }
 
 .wrapper ol{
   margin: 30px 0 10px 40px;;
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .wrapper p:first-of-type{
   font-size: 36px;
   font-family: 'Nunito',sans-serif;
   font-weight: 700;
-  margin: 40px 0 10px 0;
+  margin: 40px 0 15px 0;
   line-height: 32px;
 }
 
 .wrapper p.cta{
-  font-size: 28px;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.wrapper p.cta a{
+  font-weight: 700;
+}
+
+.wrapper li{
+  line-height: 20px;
+  margin-bottom: 5px;
 }
 
 h1,
@@ -360,9 +369,15 @@ color: #fff;
   margin-right: -10px;
 }
 
+h4.work-tag-title{
+  font-size: 16px;
+  font-weight: normal;
+}
+
 .work-tags{
   display: inline;
   padding: 0;
+  font-size: 16px;
   }
 
 .work-tags li{

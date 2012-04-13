@@ -16,7 +16,7 @@ $(document).ready(function(){
   var updateTime = 3500;
   
   var workItemOffsetArray = [];
-  var lastScrollUpdate, sidebarUpdateInterval = 0;
+  var lastScrollUpdate = sidebarUpdateInterval = 0;
   var $articleTitles = $('.wrapper h3'); 
   var percentageArray = previousArray = [0,0,0,0];
 
@@ -44,7 +44,7 @@ $(document).ready(function(){
     updateSidebarPercentages('about-section'); //initialize sidebar percentages with about me data.
     checkScrollPosition(); //override previous line if in a different section
     
-    $window.scroll(scrollThrolling);
+    $window.scroll( scrollThrolling );
 
     $window.resize(function(){
       sizeSections();
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
     var pos = $window.scrollTop();
       
-    if(pos< 1.2 * wh){
+    if(pos< 1.3 * wh){
       $downarrow.fadeIn(400,function(){ //fade in over 400ms
         $downarrow.animate({"bottom":"10px"},200,function(){ 
           $downarrow.animate({"bottom":"25px"},200,function(){ 
@@ -95,12 +95,12 @@ $(document).ready(function(){
   var sizeSections = function (){
     wh = $window.height();
     ww = $window.width();
+    
     $( "section" ).css('min-height', wh-80);
     $( "#chart-section" ).css('min-height', wh);
-    console.log('resizing to ',wh);
+
     if(chart) {
       chart.redraw();
-      console.log("redrawing chart")
     }
   }
 
@@ -126,8 +126,6 @@ $(document).ready(function(){
   ---------------------*/  
 	var updateSidebarPercentages = function(idString){
 	  
-    console.log('updateSidebarPercentages');
-
     var item;
     var itemIndex = -1;
     var itemWasFound = false;
@@ -142,7 +140,7 @@ $(document).ready(function(){
 
     if(itemWasFound && idString != currentSidebarInfoId){
 
-      console.log('new current section is: ',idString);
+      console.log('updateSidebarPercentages new current section is:',idString);
 
       currentSidebarInfoId = idString;
   	  window.clearInterval(sidebarUpdateInterval);
@@ -180,8 +178,7 @@ $(document).ready(function(){
 		timeCounter = timeCounter + 1;
 		
 		if(timeCounter > numberOfSteps){
-		  console.log('Sidebar updater: clearing sidebarUpdateInterval');
-			window.clearInterval(sidebarUpdateInterval);
+			window.clearInterval(sidebarUpdateInterval); //Sidebar updater: clearing sidebarUpdateInterval
 		}
 	}
 	
@@ -223,7 +220,6 @@ $(document).ready(function(){
   
   var addPointToChart = function() {
     $('#highcharts-0').css({'overflow':'visible'})
-    console.log('adding point');
   
     var point1 = Math.floor(Math.random()*100);
     var point2 = Math.floor(Math.random()*10);
@@ -321,7 +317,7 @@ $(document).ready(function(){
                 animation: false,
                 shadow: false,
                 series: {
-                            enableMouseTracking: false
+                          enableMouseTracking: false
                         },
                 marker: {
                     enabled:false,
@@ -333,7 +329,7 @@ $(document).ready(function(){
         },
         series: [{
             name: 'Strategy',
-            data: [502, 635, 0, 947, 0, 3634]
+            data: [502, 635, 0, 237, 0, 1340]
         }, {
             name: 'User Experience',
             data: [106, 107, 111, 133, 221, 767]
